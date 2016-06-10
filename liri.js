@@ -60,6 +60,15 @@ client.get('@lastmaxstanding', params, function(error, tweets, response){
 
 function mySpotify() {
 
-}
+	spotify.search({ type: 'track', query: 'dancing in the moonlight' }, function(err, data) {
+    if ( err ) {
+        console.log('Error occurred: ' + err);
+        return;
+    }
 
-console.log(myTweets);
+    console.log()
+ 
+    // Do something with 'data' 
+});
+
+}
