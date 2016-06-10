@@ -11,10 +11,7 @@ var client = new Twitter({
   access_token_secret: keys.twitterkeys.access_tokey_secret,
 });
 
-function goLiri () {
 
-	
-}
 var allArg = process.argv;
 
 var action = allArg[2];
@@ -25,7 +22,9 @@ var value = allArg[3];
 //var myMovie = process.argv[4]
 //var myWhat = process.argv[5]
 
-switch(action){
+function goLiri() {
+
+	switch(action){
 	case 'my-tweets':
 	myTweets();
 	break;
@@ -45,7 +44,21 @@ switch(action){
 }
 
 
+}
+
+
 function myTweets() {
+
+	var params = {screen_name: 'nodejs'};
+client.get('@lastmaxstanding', params, function(error, tweets, response){
+  if (!error) {
+    console.log(tweets);
+  }
+});
+
+}
+
+function mySpotify() {
 
 }
 
