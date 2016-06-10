@@ -1,12 +1,52 @@
 var fs = require('fs');
-var Twitter = require('twitter')
+var keys = require('./keys.js')
+var Twitter = require('twitter');
+var spotify = require('spotify');
+var request = require('request');
 
-var myTweets = process.argv[2]
-var mySpotify = process.argv[3]
-var myMovie = process.argv[4]
-var myWhat = process.argv[5]
+var client = new Twitter({
+  consumer_key: keys.twitterKeys.consumer_key,
+  consumer_secret: keys.twitterKeys.consumer_secret,
+  access_token_key: keys.twitterKeys.access_token_key,
+  access_token_secret: keys.twitterkeys.access_tokey_secret,
+});
+
+function goLiri () {
+
+	
+}
+var allArg = process.argv;
+
+var action = allArg[2];
+
+var value = allArg[3];
 
 
+//var myMovie = process.argv[4]
+//var myWhat = process.argv[5]
 
+switch(action){
+	case 'my-tweets':
+	myTweets();
+	break;
+
+	case 'spotify-this-song':
+	mySpotify();
+	break;
+
+	case 'movie-this':
+	myMovie();
+	break;
+
+	case 'do-what-it-says':
+	myWhat();
+	break;
+
+}
+
+
+function myTweets() {
+
+}
 
 console.log(myTweets);
