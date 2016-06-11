@@ -75,5 +75,17 @@ function mySpotify() {
 
 function myMovie(){
 
-	
+
 }
+
+function myWhat() {
+    fs.readFile('./random.txt', "utf8", function(err, data){
+        data = data.split(',');
+        
+
+        action = data[0];
+        
+        value = data[1];
+        
+        doSwitch(action);
+    }); 
